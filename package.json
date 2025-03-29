@@ -1,0 +1,20 @@
+{
+    "name": "storybridge",
+    "version": "1.0.0",
+    "description": "A social platform for sharing stories across networks",
+    "main": "server/server.js",
+    "scripts": {
+      "start": "node server/server.js",
+      "server": "nodemon server/server.js",
+      "client": "cd client && npm start",
+      "build": "cd client && npm install && npm run build",
+      "dev": "concurrently \"npm run server\" \"npm run client\"",
+      "heroku-postbuild": "cd client && npm install && npm run build"
+    },
+    "dependencies": {
+      "concurrently": "^7.0.0"
+    },
+    "engines": {
+      "node": "16.x"
+    }
+  }

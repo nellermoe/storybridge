@@ -3,6 +3,32 @@ const express = require('express');
 const router = express.Router();
 const neo4jService = require('../services/neo4jService');
 
+// Import the Neo4j service here
+// const neo4jService = require('../services/neo4jService');
+
+// Mock stories API for testing
+router.get('/stories', (req, res) => {
+  // Using WoT characters for our stories
+  const stories = [
+    {
+      id: 1,
+      title: "Save the Two Rivers from Trollocs",
+      storyteller: "Rand al'Thor",
+      storytellerRole: "Dragon Reborn",
+      target: "Moiraine Damodred",
+      targetRole: "Aes Sedai",
+      stepsAway: 1,
+      thumbnail: "https://via.placeholder.com/150",
+      videoUrl: "/mock-video.mp4"
+    },
+    // Add more sample stories...
+  ];
+  
+  res.json(stories);
+});
+
+module.exports = router;
+
 // Initialize demo data
 router.post('/init', async (req, res) => {
   try {
